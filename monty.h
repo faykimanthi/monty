@@ -8,7 +8,7 @@
 #include <string.h>
 #include <ctype.h>
 /**
- * struct stack_s - doubly linked list representation of a stack
+ * struct stack_s - represents doubly linked list
  * @n: integer
  * @prev: previous element of the stack
  * @next: next element of the stack
@@ -20,11 +20,11 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 /**
- * struct bus_s - variables -args, file, line content
+ * struct bus_s - these are variables args, file, line content
  * @arg: value
- * @file: monty file pointer
- * @content: line content
- * @lifi: flag change stack <-> queue
+ * @file: represents the monty file pointer
+ * @content: represents the line content
+ * @lifi: represents the flag change stack
  */
 typedef struct bus_s
 {
@@ -35,9 +35,9 @@ typedef struct bus_s
 }  bus_t;
 extern bus_t bus;
 /**
- * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
+ * struct instruction_s - represents the opcode and its function
+ * @opcode: this is the opcode
+ * @f: represents the function to handle the opcode
  */
 typedef struct instruction_s
 {
