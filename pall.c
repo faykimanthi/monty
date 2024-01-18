@@ -7,15 +7,15 @@
 */
 void f_pall(stack_t **head, unsigned int counter)
 {
-	stack_t *a;
+	stack_t *h;
 	(void)counter;
 
-	a = *head;
-	if (a == NULL)
+	h = *head;
+	if (h == NULL)
 		return;
-	while (a)
+	while (h)
 	{
-		printf("%d\n", a->n);
-		a = a->next;
+		printf("%d\n", h->n);
+		h = h->next;
 	}
 }

@@ -7,15 +7,15 @@
 */
 void f_push(stack_t **head, unsigned int counter)
 {
-	int n, b = 0, flag = 0;
+	int n, j = 0, flag = 0;
 
 	if (bus.arg)
 	{
 		if (bus.arg[0] == '-')
-			b++;
-	for (; bus.arg[b] != '\0'; b++)
+			j++;
+	for (; bus.arg[j] != '\0'; j++)
 	{
-		if (bus.arg[b] > '9' || bus.arg[b] < '0')
+		if (bus.arg[j] > '9' || bus.arg[j] < '0')
 			flag = 1;
 	}
 	if (flag == 1)
