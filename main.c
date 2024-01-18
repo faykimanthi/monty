@@ -14,7 +14,7 @@ bus_t bus = {NULL, NULL, NULL, 0};
  */
 int main(int argc, char *argv[])
 {
-       	char *content = NULL;
+	char *content = NULL;
 	FILE *file;
 	size_t size = 0;
 	ssize_t read_line;
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 	file = fopen(argv[1], "r");
 	bus.file = file;
-	
+
 	if (!file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	{
 		bus.content = content;
 		counter++;
-	
+
 	if (read_line > 0)
 	{
 		execute(content, &stack, counter, file);
@@ -51,5 +51,5 @@ int main(int argc, char *argv[])
 
 	free_stack(stack);
 	fclose(file);
-	return 0;
+	return (0);
 }
