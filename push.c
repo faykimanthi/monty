@@ -6,15 +6,15 @@
 */
 void f_push(stack_t **head, unsigned int counter)
 {
-	int n, a = 0, flag = 0;
+	int n, b = 0, flag = 0;
 
 	if (bus.arg)
 	{
 		if (bus.arg[0] == '-')
-			a++;
-		for (; bus.arg[a] != '\0'; a++)
+			b++;
+		for (; bus.arg[b] != '\0'; b++)
 		{
-			if (bus.arg[a] > 57 || bus.arg[a] < 48)
+			if (bus.arg[b] > 57 || bus.arg[b] < 48)
 				flag = 1; }
 		if (flag == 1)
 		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
