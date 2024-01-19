@@ -8,23 +8,41 @@
 #include <string.h>
 #include <ctype.h>
 /**
- * struct stack_s - represents doubly linked list
+ * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
- * @prev: previous element of the stack
- * @next: next element of the stack
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
+ *
+ * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct stack_s
 {
-	int n;
-	struct stack_s *prev;
-	struct stack_s *next;
+        int n;
+        struct stack_s *prev;
+        struct stack_s *next;
 } stack_t;
+
 /**
- * struct bus_s - these are variables args, file, line content
+ * struct instruction_s - opcode and its function
+ * @opcode: the opcode
+ * @f: function to handle the opcode
+ *
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO
+ */
+typedef struct instruction_s
+{
+        char *opcode;
+        void (*f)(stack_t **stack, unsigned int line_number);
+} instruction_t;
+/**
+ * struct bus_s - variables -args, file, line content
  * @arg: value
- * @file: represents the monty file pointer
- * @content: represents the line content
- * @lifi: represents the flag change stack
+ * @file: pointer to monty file
+ * @content: line content
+ * @lifi: flag change stack <-> queue
+ * Description: carries values through the program
  */
 typedef struct bus_s
 {
@@ -34,16 +52,7 @@ typedef struct bus_s
 	int lifi;
 }  bus_t;
 extern bus_t bus;
-/**
- * struct instruction_s - represents the opcode and its function
- * @opcode: this is the opcode
- * @f: represents the function to handle the opcode
- */
-typedef struct instruction_s
-{
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
-} instruction_t;
+
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
